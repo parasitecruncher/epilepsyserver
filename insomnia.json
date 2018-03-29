@@ -1,0 +1,127 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-03-28T23:52:40.846Z",
+	"__export_source": "insomnia.desktop.app:v4.2.14",
+	"resources": [
+		{
+			"_id": "wrk_bbe480368afb4d298144fdc7b965da13",
+			"parentId": null,
+			"modified": 1522279145132,
+			"created": 1522279145132,
+			"name": "Epilepsy Server",
+			"description": "",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_275da0cc38444d38880cd06f9b998006",
+			"parentId": "wrk_bbe480368afb4d298144fdc7b965da13",
+			"modified": 1522279562488,
+			"created": 1522279345524,
+			"name": "Base Environment",
+			"data": {
+				"base_url": "127.0.0.1:8000"
+			},
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_7f6c10b8227f4b5da1b89a6720eb7ace",
+			"parentId": "wrk_bbe480368afb4d298144fdc7b965da13",
+			"modified": 1522279465718,
+			"created": 1522279465718,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
+			"parentId": "wrk_bbe480368afb4d298144fdc7b965da13",
+			"modified": 1522279829537,
+			"created": 1522279157166,
+			"name": "Authentication",
+			"environment": {},
+			"metaSortKey": -1522279157167,
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_c17f184d61d94a13bcc634649ae60191",
+			"parentId": "env_275da0cc38444d38880cd06f9b998006",
+			"modified": 1522279616205,
+			"created": 1522279613048,
+			"name": "New Environment",
+			"data": {
+				"base_url": "127.0.0.1:8000"
+			},
+			"_type": "environment"
+		},
+		{
+			"_id": "req_2085e71c7723427a9818488814cee2b4",
+			"parentId": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
+			"modified": 1522280689595,
+			"created": 1522279161952,
+			"url": "http://127.0.0.1:8000/auth/users/create/",
+			"name": "Register",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n    \"email\": \"\",\n    \"username\": \"sd\",\n    \"password\": \"blahblah\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1522279161952,
+			"_type": "request"
+		},
+		{
+			"_id": "req_76c5e81feae54c8fb8a62dd9f17e2843",
+			"parentId": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
+			"modified": 1522280704603,
+			"created": 1522279173009,
+			"url": "127.0.0.1:8000/auth/token/create/",
+			"name": "Login",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n    \"password\": \"blahblah\",\n    \"username\": \"sd\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1522279173009,
+			"_type": "request"
+		},
+		{
+			"_id": "req_513d87218441434bb4c28f5e41ec0698",
+			"parentId": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
+			"modified": 1522280563976,
+			"created": 1522279192707,
+			"url": "http://127.0.0.1:8000/auth/token/destroy/",
+			"name": "Logout",
+			"method": "POST",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "Token d5ffb31f0a92bb236597abd6473e9437792b5af0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1522279192707,
+			"_type": "request"
+		}
+	]
+}
