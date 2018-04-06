@@ -1,0 +1,24 @@
+from django.contrib.auth.models import User, Group
+from rest_framework import serializers
+
+from models import Patient,PatientSiezures,User
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ( 'username','first_name', 'last_name', 'email','password')
+
+
+class PatientSerializer(serializers.ModelSerializer):
+    p_id = serializers.ReadOnlyField(source='user.username')
+    class Meta:
+        model = Patient
+        fields = ('p_id', 'name', 'age', 'gender', 'contact','emergency_contact1','emergency_contact2','current_GPS')
+
+
+class PatientSiezureSerializer(serializers.ModelSerializer):
+    p_id = serializers.ReadOnlyField(source='user.username')
+    class Meta:
+        model = PatientSiezures
+        fields = ('p_id', 'time_of_siezure', 'siezure_GPS')
+
