@@ -35,6 +35,7 @@ REST_FRAMEWORK = {
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'django.contrib.admin',

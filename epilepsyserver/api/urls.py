@@ -9,7 +9,9 @@ from rest_framework import routers
 
 urlpatterns = [
 
-    url(r'^patient/(?P<pk>[a-zA-Z0-9_]+)/$', views.PatientProfile.as_view()),
+    url(r'^patient/$', views.PatientProfile.as_view()),
+    url(r'^siezure/$', views.PatientSiezures.as_view()),
+
 
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

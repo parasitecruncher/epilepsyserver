@@ -1,8 +1,8 @@
 from django.contrib import admin
-
+from django.contrib.auth.admin import UserAdmin
 from models import Patient
-from models import PatientSiezures
+from models import PatientSiezure
 
-admin.site.register(PatientSiezures)
+admin.site.register(PatientSiezure)
 admin.site.register(Patient)
 # Register your models here.

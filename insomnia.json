@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-03-28T23:52:40.846Z",
+	"__export_date": "2018-04-08T01:44:51.282Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -45,6 +45,16 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_13de422d2ec94ba495219e2bef4f4b63",
+			"parentId": "wrk_bbe480368afb4d298144fdc7b965da13",
+			"modified": 1523142918898,
+			"created": 1523142918898,
+			"name": "Patients",
+			"environment": {},
+			"metaSortKey": -1523142918898,
+			"_type": "request_group"
+		},
+		{
 			"_id": "env_c17f184d61d94a13bcc634649ae60191",
 			"parentId": "env_275da0cc38444d38880cd06f9b998006",
 			"modified": 1522279616205,
@@ -58,14 +68,14 @@
 		{
 			"_id": "req_2085e71c7723427a9818488814cee2b4",
 			"parentId": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
-			"modified": 1522280689595,
+			"modified": 1523007533562,
 			"created": 1522279161952,
 			"url": "http://127.0.0.1:8000/auth/users/create/",
 			"name": "Register",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n    \"email\": \"\",\n    \"username\": \"sd\",\n    \"password\": \"blahblah\"\n}"
+				"text": "{\n    \"email\": \"\",\n    \"username\": \"sde\",\n    \"password\": \"blahblah\"\n\t\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -81,14 +91,14 @@
 		{
 			"_id": "req_76c5e81feae54c8fb8a62dd9f17e2843",
 			"parentId": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
-			"modified": 1522280704603,
+			"modified": 1523144372382,
 			"created": 1522279173009,
 			"url": "127.0.0.1:8000/auth/token/create/",
 			"name": "Login",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n    \"password\": \"blahblah\",\n    \"username\": \"sd\"\n}"
+				"text": "{\n    \"password\": \"blahblah\",\n    \"username\": \"prashanth\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -104,7 +114,7 @@
 		{
 			"_id": "req_513d87218441434bb4c28f5e41ec0698",
 			"parentId": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
-			"modified": 1522280563976,
+			"modified": 1523144417421,
 			"created": 1522279192707,
 			"url": "http://127.0.0.1:8000/auth/token/destroy/",
 			"name": "Logout",
@@ -121,6 +131,131 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1522279192707,
+			"_type": "request"
+		},
+		{
+			"_id": "req_35f5b2632ce848ef8184b2ee3dec07e1",
+			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
+			"modified": 1523151734916,
+			"created": 1523142934019,
+			"url": "http://127.0.0.1:8000/api/patient/",
+			"name": "Create Patient Profile",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Prashanth Ambati\", \n\t\"gender\": \"Male\", \n\t\"birthdate\": \"19/08/1996\", \n\t\"contact\": \"9902769411\", \n\t\"emergency_contact1\": \"1\", \n\t\"emergency_contact2\": \"1\", \n\t\"current_GPS\": \"asd\"\n}\n"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "Token 86e6145e3e015a2ca8994ea3f7e0f7e7ad961251"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1523142934019,
+			"_type": "request"
+		},
+		{
+			"_id": "req_445902a1a4284d0a95b9d533af32539b",
+			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
+			"modified": 1523151783161,
+			"created": 1523144390169,
+			"url": "http://127.0.0.1:8000/api/patient/",
+			"name": "Get Patient Details",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "Token 86e6145e3e015a2ca8994ea3f7e0f7e7ad961251"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1523144390169,
+			"_type": "request"
+		},
+		{
+			"_id": "req_361bcf3eb4cd4ba7b888acc8ae3152a9",
+			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
+			"modified": 1523151764822,
+			"created": 1523146230719,
+			"url": "http://127.0.0.1:8000/api/patient/",
+			"name": "Edit Patient Details",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"birthdate\": \"20/08/1996\"\n\n}\n"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "Token 86e6145e3e015a2ca8994ea3f7e0f7e7ad961251"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1523143662094,
+			"_type": "request"
+		},
+		{
+			"_id": "req_2b55036e0c5349beba3c5b390136c90e",
+			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
+			"modified": 1523151788891,
+			"created": 1523148890455,
+			"url": "http://127.0.0.1:8000/api/siezure/",
+			"name": "Get Patient Siezures",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "Token 86e6145e3e015a2ca8994ea3f7e0f7e7ad961251"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1523148890455,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7991d0acc5b647a1a1a318516d3e6ab7",
+			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
+			"modified": 1523151816953,
+			"created": 1523149378498,
+			"url": "http://127.0.0.1:8000/api/siezure/",
+			"name": "Create Patient Siezures",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"time_of_siezure\": \"06:55\",\n\t\"siezure_GPS\": \"1111,1111\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "Token 86e6145e3e015a2ca8994ea3f7e0f7e7ad961251"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1523149378498,
 			"_type": "request"
 		}
 	]
