@@ -5,7 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework import generics, permissions, status
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 
 from api.models import Patient,PatientSiezure
@@ -51,12 +51,33 @@ class PatientProfile(APIView):
             return Response("Patient Exists! Cannot create new!", status=status.HTTP_400_BAD_REQUEST)
 
         except:
+            
             serializer = PatientSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save(p_id=User.objects.get(username=request.user.username))
                 return Response(serializer.data, status=status.HTTP_200_OK)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+class Register(APIView):
+    permission_classes = [AllowAny]
+    def post(self,request,format=None):
+        if Patient.objects.all().filter(p_id__username=request.data['username']).count() == 1:
+            print request.data['username']
+            return Response("Patient Exists! Cannot create new!", status=status.HTTP_400_BAD_REQUEST)
+
+        else:
+            if User.objects.filter(username=request.data['username']).count()==0:
+                newuser=User(username=request.data['username'],
+                             email=request.data['email'])
+                newuser.set_password(request.data['password'])
+                newuser.save()
+            newuser=User.objects.get(username=request.data['username'])
+            serializer = PatientSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save(p_id=User.objects.get(username=newuser.username))
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class PatientSiezures(APIView):
 
@@ -74,6 +95,3 @@ class PatientSiezures(APIView):
             serializer.save(p_id=User.objects.get(username=request.user.username))
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-

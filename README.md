@@ -13,7 +13,7 @@ to install all pipenv libraries
 
 **Google and learn what both of them are.**
 
-##Django
+## Django
 
 Once all libraries are installed run
 `./manage.py makemigrations`
