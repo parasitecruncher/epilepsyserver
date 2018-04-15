@@ -11,6 +11,7 @@ urlpatterns = [
 
     url(r'^patient/$', views.PatientProfile.as_view()),
     url(r'^siezure/$', views.PatientSiezures.as_view()),
+    url(r'^siezurefreq/$', views.PatientSiezuresFrequency.as_view()),
     url(r'^register/$', views.Register.as_view()),
 
 

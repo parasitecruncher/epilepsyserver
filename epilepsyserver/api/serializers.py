@@ -11,10 +11,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 class PatientSerializer(serializers.ModelSerializer):
     p_id = serializers.ReadOnlyField(source='user.username')
-
+    email = serializers.ReadOnlyField(source='user.email')
     class Meta:
         model = Patient
-        fields = ('p_id', 'name', 'birthdate', 'gender', 'contact','emergency_contact1','emergency_contact2','current_GPS')
+        fields = ('p_id', 'name', 'birthdate', 'gender', 'contact','emergency_contact1','emergency_contact2','current_GPS','email')
 
 
 class PatientSiezureSerializer(serializers.ModelSerializer):

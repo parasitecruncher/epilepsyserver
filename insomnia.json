@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-04-12T11:17:41.652Z",
+	"__export_date": "2018-04-15T13:04:21.798Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -91,14 +91,14 @@
 		{
 			"_id": "req_76c5e81feae54c8fb8a62dd9f17e2843",
 			"parentId": "fld_7b91b975bc9b41bbbbdb2fd49f0439f7",
-			"modified": 1523531809606,
+			"modified": 1523794024872,
 			"created": 1522279173009,
 			"url": "127.0.0.1:8000/auth/token/create/",
 			"name": "Login",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n    \"password\": \"blahblah\",\n    \"username\": \"test2\"\n}"
+				"text": "{\n    \"password\": \"blahblah\",\n    \"username\": \"prashanth\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -136,14 +136,14 @@
 		{
 			"_id": "req_35f5b2632ce848ef8184b2ee3dec07e1",
 			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
-			"modified": 1523531798427,
+			"modified": 1523572535083,
 			"created": 1523142934019,
 			"url": "http://127.0.0.1:8000/api/register/",
 			"name": "Create Patient Profile",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"username\":\"test2\",\n\t\"email\": \"test2@test.com\",\n    \"password\": \"blahblah\",\n\t\"name\": \"test\", \n\t\"gender\": \"Male\", \n\t\"birthdate\": \"19/08/1996\", \n\t\"contact\": \"9902769411\", \n\t\"emergency_contact1\": \"1\", \n\t\"emergency_contact2\": \"1\", \n\t\"current_GPS\": \"asd\"\n}\n"
+				"text": "{\n\t\"username\":\"test3\",\n\t\"email\": \"test2@test.com\",\n    \"password\": \"blahblah\",\n\t\"name\": \"test\", \n\t\"gender\": \"Male\", \n\t\"birthdate\": \"19/08/1996\", \n\t\"contact\": \"9902769411\", \n\t\"emergency_contact1\": \"1\", \n\t\"emergency_contact2\": \"1\"\n}\n"
 			},
 			"parameters": [],
 			"headers": [
@@ -159,7 +159,7 @@
 		{
 			"_id": "req_445902a1a4284d0a95b9d533af32539b",
 			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
-			"modified": 1523530981052,
+			"modified": 1523796757623,
 			"created": 1523144390169,
 			"url": "http://127.0.0.1:8000/api/patient/",
 			"name": "Get Patient Details",
@@ -225,14 +225,14 @@
 		{
 			"_id": "req_7991d0acc5b647a1a1a318516d3e6ab7",
 			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
-			"modified": 1523151816953,
+			"modified": 1523794127088,
 			"created": 1523149378498,
 			"url": "http://127.0.0.1:8000/api/siezure/",
 			"name": "Create Patient Siezures",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"time_of_siezure\": \"06:55\",\n\t\"siezure_GPS\": \"1111,1111\"\n}"
+				"text": "{\n\t\"time_of_siezure\": \"Sun Mar 22 17:04:08 GMT+05:30 2018\",\n\t\"siezure_GPS\": \"1111,1111\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -247,6 +247,33 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1523149378498,
+			"_type": "request"
+		},
+		{
+			"_id": "req_426594e50ee249bdbabc6e7fd8841f39",
+			"parentId": "fld_13de422d2ec94ba495219e2bef4f4b63",
+			"modified": 1523797420842,
+			"created": 1523796710759,
+			"url": "http://127.0.0.1:8000/api/siezurefreq/",
+			"name": "Get Siezures frequency",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"type\":\"year\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "Token 86e6145e3e015a2ca8994ea3f7e0f7e7ad961251"
+				},
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1523148890454,
 			"_type": "request"
 		}
 	]
